@@ -16,7 +16,9 @@ console.log(cardProductos);
 let cajaProducto = document.querySelector("#content-tarjeta");
 
 function mostrarProductos(gruposProductos){
-for (let i = 0; i < gruposProductos.length; i++) {
+for (let i = 0; i < gruposProductos.length; i++) { 
+  // y le quitamos el punto del inicio para que quede pública ("/assets/...")
+  let rutaImagenCorrecta = gruposProductos[i].image.mobile.replace('./', '/');
   cajaProducto.innerHTML += `
     <div class="flex flex-col gap-1 mb-5 p-3 rounded-md shadow dark:border dark:border-gray-400 ">
       <div class="w-full h-56 relative mb-4">
